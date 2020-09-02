@@ -57,17 +57,17 @@
         internal string ssl_pwd;
     }
 
-    internal class mk_common
+    public class mk_common
     {
-       
-        internal static  void mk_env_init(ref mk_config cfg)
+
+        public static  void mk_env_init(ref mk_config cfg)
         {
             if (LibraryConst.IsWindows) mk_common_windows.mk_env_init(ref cfg);
             else mk_common_unix.mk_env_init(ref cfg);
         }
 
 
-        internal static  void mk_stop_all_server()
+        public static  void mk_stop_all_server()
         {
             if (LibraryConst.IsWindows) mk_common_windows.mk_stop_all_server();
             else mk_common_unix.mk_stop_all_server();
@@ -85,7 +85,7 @@
         /// <param name="ssl_is_path"><inheritdoc cref="mk_config.ssl_is_path"/></param>
         /// <param name="ssl"><inheritdoc cref="mk_config.ssl"/></param>
         /// <param name="ssl_pwd"><inheritdoc cref="mk_config.ssl_pwd"/></param>
-        internal static  void mk_env_init1(int thread_num, int log_level,  string log_file_path, int log_file_days, int ini_is_path, string ini, int ssl_is_path, string ssl, string ssl_pwd)
+        public static  void mk_env_init1(int thread_num, int log_level,  string log_file_path, int log_file_days, int ini_is_path, string ini, int ssl_is_path, string ssl, string ssl_pwd)
         {
             if (LibraryConst.IsWindows) mk_common_windows.mk_env_init1(thread_num,log_level,log_file_path,log_file_days,ini_is_path,ini,ssl_is_path,ssl,ssl_pwd);
             else mk_common_unix.mk_env_init1(thread_num, log_level, log_file_path, log_file_days, ini_is_path, ini, ssl_is_path, ssl,ssl_pwd);
@@ -96,7 +96,7 @@
         /// </summary>
         /// <param name="key">配置项名</param>
         /// <param name="val">配置项值</param>
-        internal static  void mk_set_option(string key, string val)
+        public static  void mk_set_option(string key, string val)
         {
             if (LibraryConst.IsWindows) mk_common_windows.mk_set_option(key,val);
             else mk_common_unix.mk_set_option(key, val);
@@ -107,7 +107,7 @@
         /// </summary>
         /// <param name="key">配置项名</param>
         /// <returns></returns>
-        internal static System.IntPtr mk_get_option(string key)
+        public static System.IntPtr mk_get_option(string key)
             => LibraryConst.IsWindows ? mk_common_windows.mk_get_option(key) : mk_common_unix.mk_get_option(key);
 
         /// <summary>
@@ -116,7 +116,7 @@
         /// <param name="port">http监听端口，推荐80，传入0则随机分配</param>
         /// <param name="ssl">是否为ssl类型服务器</param>
         /// <returns></returns>
-        internal static  ushort mk_http_server_start(ushort port, int ssl)
+        public static  ushort mk_http_server_start(ushort port, int ssl)
             => LibraryConst.IsWindows ? mk_common_windows.mk_http_server_start(port, ssl) : mk_common_unix.mk_http_server_start(port, ssl);
 
 
@@ -126,7 +126,7 @@
         /// <param name="port">rtsp监听端口，推荐554，传入0则随机分配</param>
         /// <param name="ssl">是否为ssl类型服务器</param>
         /// <returns></returns>
-        internal static  ushort mk_rtsp_server_start(ushort port, int ssl)
+        public static  ushort mk_rtsp_server_start(ushort port, int ssl)
             => LibraryConst.IsWindows ? mk_common_windows.mk_rtsp_server_start(port, ssl) : mk_common_unix.mk_rtsp_server_start(port, ssl);
 
         /// <summary>
@@ -135,7 +135,7 @@
         /// <param name="port">rtmp监听端口，推荐1935，传入0则随机分配</param>
         /// <param name="ssl">是否为ssl类型服务器</param>
         /// <returns>0:失败,非0:端口号</returns>
-        internal static  ushort mk_rtmp_server_start(ushort port, int ssl)
+        public static  ushort mk_rtmp_server_start(ushort port, int ssl)
             => LibraryConst.IsWindows ? mk_common_windows.mk_rtmp_server_start(port, ssl) : mk_common_unix.mk_rtmp_server_start(port, ssl);
 
 
@@ -144,7 +144,7 @@
         /// </summary>
         /// <param name="port">rtp监听端口(包括udp/tcp)</param>
         /// <returns>0:失败,非0:端口号</returns>
-        internal static  ushort mk_rtp_server_start(ushort port)
+        public static  ushort mk_rtp_server_start(ushort port)
             => LibraryConst.IsWindows ? mk_common_windows.mk_rtp_server_start(port) : mk_common_unix.mk_rtp_server_start(port);
 
 
@@ -153,7 +153,7 @@
         /// </summary>
         /// <param name="port">shell监听端口</param>
         /// <returns>0:失败,非0:端口号</returns>
-        internal static  ushort mk_shell_server_start(ushort port)
+        public static  ushort mk_shell_server_start(ushort port)
             => LibraryConst.IsWindows ? mk_common_windows.mk_shell_server_start(port) : mk_common_unix.mk_shell_server_start(port);
 
     }

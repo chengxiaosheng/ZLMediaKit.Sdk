@@ -29,7 +29,7 @@
 
 
 
-        internal static System.IntPtr mk_mp4_info_get_file_path(System.IntPtr ctx)
+        public static System.IntPtr mk_mp4_info_get_file_path(System.IntPtr ctx)
             => LibraryConst.IsWindows ? mk_events_objects_windows.mk_mp4_info_get_file_path(ctx) : mk_events_objects_unix.mk_mp4_info_get_file_path(ctx);
 
 
