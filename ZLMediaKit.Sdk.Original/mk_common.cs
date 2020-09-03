@@ -10,51 +10,51 @@
         /// <summary>
         /// 线程数
         /// </summary>
-        internal int thread_num;
+        public int thread_num;
 
         /// <summary>
         /// 日志级别,支持0~4
         /// </summary>
-        internal int log_level;
+        public int log_level;
 
         /// <summary>
         /// 文件日志保存路径,路径可以不存在(内部可以创建文件夹)，设置为NULL关闭日志输出至文件
         /// </summary>
         [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]
-        internal string log_file_path;
+        public string log_file_path;
 
         /// <summary>
         /// 文件日志保存天数,设置为0关闭日志文件
         /// </summary>
-        internal int log_file_days;
+        public int log_file_days;
 
         /// <summary>
         /// 配置文件是内容还是路径
         /// </summary>
-        internal int ini_is_path;
+        public int ini_is_path;
 
         /// <summary>
         /// 配置文件内容或路径，可以为NULL,如果该文件不存在，那么将导出默认配置至该文件
         /// </summary>
         [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]
-        internal string ini;
+        public string ini;
 
         /// <summary>
         /// ssl证书是内容还是路径
         /// </summary>
-        internal int ssl_is_path;
+        public int ssl_is_path;
 
         /// <summary>
         /// ssl证书内容或路径，可以为NULL
         /// </summary>
         [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]
-        internal string ssl;
+        public string ssl;
 
         /// <summary>
         /// 证书密码，可以为NULL
         /// </summary>
         [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]
-        internal string ssl_pwd;
+        public string ssl_pwd;
     }
 
     public class mk_common

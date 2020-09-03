@@ -142,7 +142,7 @@
 
     public class mk_event
     {
-        internal static  void mk_events_listen(ref mk_events events)
+        public static void mk_events_listen(ref mk_events events)
         {
             if (LibraryConst.IsWindows) mk_events_windows.mk_events_listen(ref events);
             else mk_events_unix.mk_events_listen(ref events);
